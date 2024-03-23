@@ -1,6 +1,12 @@
+import Feed from "@/components/Feed"
+import SearchArea from "@/components/SearchArea"
+
 const Home = () => {
    return (
-      <div>page</div>
+      <section className="lateral-spacing">
+         <SearchArea />
+         <Feed />
+      </section>
    )
 }
 

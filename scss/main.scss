@@ -1,3 +1,5 @@
+@use 'utils/breakpoints' as *;
+
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 @tailwind base;
@@ -30,6 +32,68 @@ html {
    font-size: clamp(1rem, .9rem + .5vw, 1.8rem);
 }
 
-.image {
+.moon-img {
    width: clamp(1.3rem, 1rem + 1vw, 4rem)
+}
+
+.search-input-wrapper {
+   width: 45rem;
+
+   display: flex;
+   align-items: center;
+
+   padding: 0 2rem;
+   border-radius: .5rem;
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+   @include smallScreensDown {
+      width: 100%;
+   }
+}
+
+.search-menu-wrapper {
+   width: 20rem;
+}
+
+.search-menu {
+   min-height: 100%;
+   width: 100%;
+
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+   background-color: white;
+   padding: 0 2rem;
+   border-radius: .5rem;
+}
+
+.search-input {
+   outline: none;
+   font-size: 1.3rem;
+   width: 35rem;
+}
+
+.search-toggle-menu {
+   width: 100%;
+
+   display: flex;
+   flex-direction: column;
+
+   position: relative;
+   z-index: 1;
+
+   padding: 1.5rem 2.5rem;
+   border-radius: .5rem;
+   background-color: white;
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+   button {
+      width: 100%;
+      text-align: left;
+      font-weight: 600;
+      font-size: 1.2rem;
+      padding: .4rem 0;
+   }
 }

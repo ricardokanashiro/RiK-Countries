@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import CountryCard from "@/components/CountryCard"
 import SearchArea from "@/components/SearchArea"
@@ -10,30 +10,107 @@ import { data } from "@/data.mjs"
 const Home = () => {
 
    const [numRenContries, setNumRenContries] = useState(8)
+   const [nameSearch, setNameSearch] = useState('')
+   const [regionSearch, setRegionSearch] = useState('')
+
    let count = 0
+
+   function handleNameSearch(e) {
+      setNameSearch(e.target.value)
+   }
+
+   function handleRegionSearch(region) {
+      setRegionSearch(region)
+   }
+
+   useEffect(() => {
+      setNumRenContries(8)
+   }, [nameSearch, regionSearch])
 
    return (
       <section className="lateral-spacing">
-         <SearchArea />
+         <SearchArea 
+            handleNameSearch={handleNameSearch}
+            handleRegionSearch={handleRegionSearch}
+         />
          
-         <section className="flex flex-wrap flex-row gap-24">
+         <section className="flex flex-wrap flex-row gap-20 justify-evenly">
             {
                
                data.map(country => {
 
-                  if(count < numRenContries) {
+                  if(regionSearch !== '') {
 
-                     count++
+                     if(regionSearch === country.region) {
 
-                     return <CountryCard 
-                        country={country}
-                     />
+                        if(nameSearch !== '') {
 
+                           if(country.name.toLowerCase().includes(nameSearch.toLowerCase())) {
+                              if(count < numRenContries) {
+         
+                                 count++
+            
+                                 return <CountryCard 
+                                    country={country}
+                                 />
+            
+                              } else {
+                                 return
+                              }
+                           } else {
+                              return
+                           }
+      
+                        } else {
+                           if(count < numRenContries) {
+         
+                              count++
+         
+                              return <CountryCard 
+                                 country={country}
+                              />
+         
+                           } else {
+                              return
+                           }
+                        }
+                     }
                   } else {
-                     return
+
+                     if(nameSearch !== '') {
+                        if(country.name.toLowerCase().includes(nameSearch.toLowerCase())) {
+                           if(count < numRenContries) {
+         
+                              count++
+         
+                              return <CountryCard 
+                                 country={country}
+                              />
+         
+                           } else {
+                              return
+                           }
+                        } else {
+                           return
+                        }
+   
+                     } else {
+                        if(count < numRenContries) {
+      
+                           count++
+      
+                           return <CountryCard 
+                              country={country}
+                           />
+      
+                        } else {
+                           return
+                        }
+                     }
                   }
 
                })
+
             }
 
          </section>

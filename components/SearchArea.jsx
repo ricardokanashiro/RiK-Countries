@@ -6,7 +6,7 @@ import Image from "next/image"
 import arrowDown from '@/assets/arrow-down.svg'
 import magnifyingGlass from '@/assets/magnifying-glass.svg'
 
-const SearchArea = () => {
+const SearchArea = ({ handleNameSearch, handleRegionSearch }) => {
 
    const [menuActive, setMenuActive] = useState(false)
 
@@ -21,6 +21,7 @@ const SearchArea = () => {
                type="text"
                className="search-input"
                placeholder="Search for a country..."
+               onChange={(e) => handleNameSearch(e)}
             />
 
          </div>
@@ -40,11 +41,11 @@ const SearchArea = () => {
                menuActive &&
                (
                   <div className="search-toggle-menu">
-                     <button>África</button>
-                     <button>America</button>
-                     <button>Ásia</button>
-                     <button>Europe</button>
-                     <button>Oceania</button>
+                     <button onClick={(e) => handleRegionSearch('Africa')}>Africa</button>
+                     <button onClick={(e) => handleRegionSearch('Americas')}>America</button>
+                     <button onClick={(e) => handleRegionSearch('Asia')}>Asia</button>
+                     <button onClick={(e) => handleRegionSearch('Europe')}>Europe</button>
+                     <button onClick={(e) => handleRegionSearch('Oceania')}>Oceania</button>
 
                   </div>
                )

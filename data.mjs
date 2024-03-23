@@ -1,4 +1,4 @@
-[
+export const data = JSON.parse(JSON.stringify([
   {
     "name": "Afghanistan",
     "topLevelDomain": [".af"],
@@ -16821,4 +16821,4 @@
     "cioc": "ZIM",
     "independent": true
   }
-]
+]))

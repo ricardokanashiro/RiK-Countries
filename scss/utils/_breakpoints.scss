@@ -1,5 +1,17 @@
+@mixin extraSmallScreensDown {
+   @media (max-width: 640px) {
+      @content;
+   }
+}
+
 @mixin smallScreensDown {
    @media (max-width: 768px) {
+      @content;
+   }
+}
+
+@mixin mediumScreensDown {
+   @media (max-width: 1024px) {
       @content;
    }
 }

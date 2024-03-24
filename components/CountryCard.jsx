@@ -1,8 +1,14 @@
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 const CountryCard = ({ country }) => {
+   const router = useRouter()
+
    return (
-      <div className="country-card cursor-pointer">
+      <div 
+         className="country-card cursor-pointer"
+         onClick={() => { router.push(`/${country.alpha3Code}`) }}
+      >
 
          <Image
             src={country.flag}

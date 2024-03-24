@@ -1,7 +1,8 @@
 import '@/css/main.css'
 
-import Nav from '@/components/Nav'
-import Provider from '@/components/Provider'
+import Home from '@/components/Home'
+
+import ThemeProvider from '@/context/ThemeProvider'
 
 export const metadata = {
    title: 'RiK Countries',
@@ -10,22 +11,13 @@ export const metadata = {
 
 const RootLayout = ({ children }) => {
    return (
-      <Provider>
-         <html lang="en">
-            <body>
-               <header>
-                  <Nav />
-               </header>
-
-               <main>
-                  {children}
-               </main>
-
-            </body>
-
-         </html>
-
-      </Provider>
+      <html lang="en">
+         <ThemeProvider>
+            <Home 
+               children={children}
+            />
+         </ThemeProvider>
+      </html>
    )
 }
 

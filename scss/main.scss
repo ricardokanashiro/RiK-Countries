@@ -18,6 +18,21 @@ html {
    font-size: 62.5%;
 }
 
+body {
+   background-color: var(--background-color);
+}
+
+h1, h2, h3, p, span {
+   color: var(--text-color)
+}
+
+.navbar {
+   background-color: var(--components-color);
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+   @apply flex justify-between items-center py-8 mb-16;
+
+}
+
 .lateral-spacing {
    padding-left: clamp(2rem, 5vw, 8rem);
    padding-right: clamp(2rem, 5vw, 8rem);
@@ -37,6 +52,7 @@ html {
 }
 
 .search-input-wrapper {
+   background-color: var(--components-color);
    width: 45rem;
 
    display: flex;
@@ -64,7 +80,7 @@ html {
    justify-content: space-between;
 
    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-   background-color: white;
+   background-color: var(--components-color);
    padding: 0 2rem;
    border-radius: .5rem;
 }
@@ -73,10 +89,13 @@ html {
    outline: none;
    font-size: 1.3rem;
    width: 35rem;
+   background-color: transparent;
+   color: var(--text-color)
 }
 
 .search-toggle-menu {
    width: 100%;
+   background-color: var(--components-color);
 
    display: flex;
    flex-direction: column;
@@ -86,7 +105,6 @@ html {
 
    padding: 1.5rem 2.5rem;
    border-radius: .5rem;
-   background-color: white;
    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
    button {
@@ -95,6 +113,7 @@ html {
       font-weight: 600;
       font-size: 1.2rem;
       padding: .4rem 0;
+      color: var(--text-color)
    }
 }
 
@@ -113,6 +132,7 @@ html {
 }
 
 .country-info {
+   background-color: var(--components-color);
    padding: 2rem;
 
    h3 {
@@ -163,6 +183,7 @@ html {
       gap: 1rem;
       font-size: 1.4rem;
       padding: .7rem 2.4rem;
+      background-color: var(--components-color);
    }
 
    .arrow-left-img {

@@ -25,6 +25,7 @@ Os usuários devem ser capazes de:
 - Filtrar países por região ✅
 - Clicar em um país para ver informações mais detalhadas em uma página separada ✅
 - Alterne o esquema de cores entre o modo claro e escuro ✅
+- Ser capaz de redirecionar para páginas países vizinhos ✅
 
 ### Links
 

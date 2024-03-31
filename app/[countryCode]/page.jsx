@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { useEffect, useState } from "react"
+import Link from "next/link"
 
 import { data } from "@/data.mjs"
 
@@ -58,7 +59,7 @@ const page = ({ params }) => {
 
                {
                   border && border.map(country => (
-                     <button className="border-country">{country}</button>
+                     <Link className="border-country" href={`/${country}`} >{country}</Link>
                   ))
                }
             </div>
